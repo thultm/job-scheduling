@@ -150,13 +150,13 @@ def display_results(algorithm_name, df, makespan, results_table, summary_table, 
         st.write(f"Makespan (total completion time): {makespan}")
 
         st.subheader("Detailed Job Metrics:")
-        st.dataframe(results_table)
+        st.dataframe(results_table, hide_index=True)
 
         st.subheader("Summary Statistics:")
-        st.dataframe(summary_table)
+        st.dataframe(summary_table, hide_index=True)
         
         st.subheader("Additional Metrics:")
-        st.dataframe(additional_table)
+        st.dataframe(additional_table, hide_index=True)
     
     with figure_container:
         fig = visualize_schedule(df, title=f"{algorithm_name} Schedule")
